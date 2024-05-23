@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Contact
+{% endblock title %}
+
+
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="/static/images/12.jpeg/?contact"  style="width: 300px;height:700px" class="d-block w-100" alt="...">
+    <h2 class = "text-center my-3" >Contact Us:</h2>
+<div class="container-fluid mb-3 py-4 my-2">
+    <form method="post" action="/contact"> 
+        {% csrf_token %}
+        <div class="form-group my-4">
+            <label for="name my-2">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name">
+        </div>     
+    
+        <div class="form-group my-4">
+            <label for="email my-2">Email</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email">
+        </div>     
+    
+        <div class="form-group my-2">
+            <label for="phone number my-2">Phone No.</label>
+            <input type="text" class="form-control" name="phone number" id="phone number" placeholder="Enter your Phone No.">
+        </div>     
+    
+        <div class="form-group my-2">
+            <label for="query my-2">Query</label>
+            <input type="text" class="form-control" name="query" id="query" placeholder="Enter your query">
+        </div>  
+
+        {% comment %} <div class="form-group my-2">
+            <label for="date my-2">Date</label>
+            <input type="text" class="form-control" name="date" id="date" placeholder="Enter your date">
+        </div>   {% endcomment %}
+
+        <button type="submit my-2" class="btn btn-primary">Submit</button>   
+    </form>
+</div>
+</div>
+{% endblock body %}
